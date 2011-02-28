@@ -1,0 +1,15 @@
+In file included from libffmpegthumbnailer/jpegwriter.h:24:0,
+	                  from libffmpegthumbnailer/jpegwriter.cpp:17:
+/usr/include/jpeglib.h:952:30: error: 'FILE' has not been declared
+/usr/include/jpeglib.h:953:29: error: 'FILE' has not been declared
+
+--- origsrc/ffmpegthumbnailer-2.0.6/libffmpegthumbnailer/jpegwriter.h	2011-01-06 13:01:50.000000000 -0600
++++ src/ffmpegthumbnailer-2.0.6/libffmpegthumbnailer/jpegwriter.h	2011-02-27 18:34:17.600021900 -0600
+@@ -17,6 +17,7 @@
+ #ifndef JPEG_WRITER_H
+ #define JPEG_WRITER_H
+ 
++#include <cstdio>
+ #include <string>
+ #include <vector>
+ 

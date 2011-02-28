@@ -1,0 +1,9 @@
+category: Video
+requires: libavcodec52 libavformat52 libavutil50 libgcc1 libjpeg8 libpng14 libstdc++6 libswscale0
+external-source: ffmpegthumbnailer
+sdesc: "Video thumbnailer to be used by file managers (library)"
+ldesc: "This video thumbnailer can be used to create thumbnails for your 
+video files. The thumbnailer uses ffmpeg to decode frames from the video 
+files, so supported videoformats depend on the configuration flags of 
+ffmpeg. This thumbnailer was designed to be as fast and lightweight as 
+possible. The only dependencies are ffmpeg, libpng and libjpeg."

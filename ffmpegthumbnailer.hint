@@ -1,0 +1,8 @@
+category: Video
+requires: libffmpegthumbnailer4 libgcc1 libglib2.0_0 libstdc++6
+sdesc: "Video thumbnailer to be used by file managers"
+ldesc: "This video thumbnailer can be used to create thumbnails for your 
+video files. The thumbnailer uses ffmpeg to decode frames from the video 
+files, so supported videoformats depend on the configuration flags of 
+ffmpeg. This thumbnailer was designed to be as fast and lightweight as 
+possible. The only dependencies are ffmpeg, libpng and libjpeg."
