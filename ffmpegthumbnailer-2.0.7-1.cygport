@@ -1,0 +1,33 @@
+DESCRIPTION="Video thumbnailer to be used by file managers"
+HOMEPAGE="http://code.google.com/p/ffmpegthumbnailer/"
+SRC_URI="http://ffmpegthumbnailer.googlecode.com/files/${P}.tar.gz"
+
+PATCH_URI="
+	2.0.6-cygwin-gio.patch
+	2.0.6-jpeg.patch
+	2.0.6-no-undefined.patch
+"
+
+PKG_NAMES="${PN} lib${PN}4 lib${PN}-devel"
+ffmpegthumbnailer_CONTENTS="usr/bin/*.exe usr/share/"
+libffmpegthumbnailer4_CONTENTS="usr/bin/*-4.dll"
+libffmpegthumbnailer_devel_CONTENTS="usr/include/ usr/lib/"
+
+CYGCONF_ARGS="
+	--enable-gio
+	--enable-jpeg
+	--enable-png
+"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/share/thumbnailers
+	cat > ${D}/usr/share/thumbnailers/ffmpeg.thumbnailer <<_EOF
+[Thumbnailer Entry]
+TryExec=/usr/bin/ffmpegthumbnailer
+Exec=/usr/bin/ffmpegthumbnailer -s %s -i %u -o %o
+MimeType=video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg
+_EOF
+}
