@@ -14,6 +14,7 @@ libffmpegthumbnailer4_CONTENTS="usr/bin/*-4.dll"
 libffmpegthumbnailer_devel_CONTENTS="usr/include/ usr/lib/"
 
 CYGCONF_ARGS="
+	--disable-static
 	--enable-gio
 	--enable-jpeg
 	--enable-png
@@ -31,3 +32,5 @@ Exec=/usr/bin/ffmpegthumbnailer -s %s -i %u -o %o
 MimeType=video/3gpp;video/dv;video/fli;video/flv;video/mp2t;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/ogg;video/quicktime;video/vivo;video/vnd.divx;video/vnd.rn-realvideo;video/vnd.vivo;video/webm;video/x-anim;video/x-avi;video/x-flc;video/x-fli;video/x-flic;video/x-flv;video/x-m4v;video/x-matroska;video/x-mpeg;video/x-ms-asf;video/x-ms-asx;video/x-msvideo;video/x-ms-wm;video/x-ms-wmv;video/x-ms-wmx;video/x-ms-wvx;video/x-nsv;video/x-ogm+ogg;video/x-theora+ogg
 _EOF
 }
+
+KEEP_LA_FILES="none"

@@ -1,5 +1,5 @@
 category: Video
-requires: libffmpegthumbnailer4 libavcodec-devel libavformat-devel libavutil-devel libjpeg-devel libpng14-devel libstdc++6-devel libswscale-devel
+requires: libffmpegthumbnailer4 libav-devel libjpeg-devel libpng14-devel zlib-devel
 external-source: ffmpegthumbnailer
 sdesc: "Video thumbnailer to be used by file managers (development)"
 ldesc: "This video thumbnailer can be used to create thumbnails for your 
