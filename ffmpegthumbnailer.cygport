@@ -1,6 +1,6 @@
 NAME="ffmpegthumbnailer"
 VERSION=2.0.8
-RELEASE=2
+RELEASE=3
 CATEGORY="Video"
 SUMMARY="Video thumbnailer to be used by file managers"
 DESCRIPTION="This video thumbnailer can be used to create thumbnails for your
