@@ -1,6 +1,6 @@
 NAME="ffmpegthumbnailer"
 VERSION=2.0.8
-RELEASE=3
+RELEASE=4
 CATEGORY="Video"
 SUMMARY="Video thumbnailer to be used by file managers"
 DESCRIPTION="This video thumbnailer can be used to create thumbnails for your
@@ -8,15 +8,16 @@ video files. The thumbnailer uses ffmpeg to decode frames from the video files,
 so supported videoformats depend on the configuration flags of ffmpeg. This
 thumbnailer was designed to be as fast and lightweight as possible."
 HOMEPAGE="http://code.google.com/p/ffmpegthumbnailer/"
-SRC_URI="http://ffmpegthumbnailer.googlecode.com/files/${P}.tar.gz"
+SRC_URI="http://ffmpegthumbnailer.googlecode.com/files/${NAME}-${VERSION}.tar.gz"
 
 PATCH_URI="
 	2.0.6-cygwin-gio.patch
 	2.0.6-jpeg.patch
 	2.0.6-no-undefined.patch
+	2.0.8-gcc49.patch
 "
 
-PKG_NAMES="${PN} lib${PN}4 lib${PN}-devel"
+PKG_NAMES="${NAME} lib${NAME}4 lib${NAME}-devel"
 ffmpegthumbnailer_CONTENTS="usr/bin/*.exe usr/share/"
 libffmpegthumbnailer4_SUMMARY="Video thumbnailer library (runtime)"
 libffmpegthumbnailer4_CONTENTS="usr/bin/*-4.dll"
