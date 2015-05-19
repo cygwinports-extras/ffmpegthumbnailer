@@ -1,0 +1,18 @@
+--- origsrc/ffmpegthumbnailer-2.0.10/main.cpp	2015-04-22 16:07:06.000000000 -0500
++++ src/ffmpegthumbnailer-2.0.10/main.cpp	2015-05-19 00:45:35.150053900 -0500
+@@ -248,9 +248,15 @@ void tryUriConvert(std::string& filename
+ 		return;
+ 	}
+ 
++#ifdef __CYGWIN__
++    LibHandle gLib("cygglib-2.0-0.dll");
++    LibHandle gobjectLib("cyggobject-2.0-0.dll");
++    LibHandle gioLib("cyggio-2.0-0.dll");
++#else
+     LibHandle gLib("libglib-2.0.so.0");
+     LibHandle gobjectLib("libgobject-2.0.so.0");
+     LibHandle gioLib("libgio-2.0.so.0");
++#endif
+ 
+     if (gioLib && gLib && gobjectLib)
+     {
